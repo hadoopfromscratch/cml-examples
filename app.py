@@ -13,7 +13,7 @@ def get_model_url():
     api_url= f"https://{domain}"
     api_client=cmlapi.default_client(url=api_url,cml_api_key=api_key)
     model = api_client.list_all_models()
-    access_key = model.models[0].access_key
+    access_key = model.models[-1].access_key
     model_url = f"https://modelservice.{domain}/model?accessKey={access_key}"
     return model_url
 
