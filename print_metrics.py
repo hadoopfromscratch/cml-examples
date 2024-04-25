@@ -10,7 +10,7 @@ domain = os.environ.get('CDSW_DOMAIN')
 api_url= f"https://{domain}"
 api_client=cmlapi.default_client(url=api_url,cml_api_key=api_key)
 model = api_client.list_all_models()
-crn = model.models[0].crn
+crn = model.models[-1].crn
 
 # print metrics
 data = metrics.read_metrics(model_crn=crn)
